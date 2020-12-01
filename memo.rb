@@ -13,8 +13,8 @@ def to_do
 end
 
 if memo_type == 1
-	to_do
-	CSV.open("#{filename}.csv", "w") do |content|
+  to_do
+  CSV.open("#{filename}.csv", "w") do |content|
     content << [memo_contents]
   end
 elsif memo_type == 2

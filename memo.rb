@@ -15,10 +15,11 @@ end
 if memo_type == 1
 	to_do
 	CSV.open("#{filename}.csv", "w") do |content|
-		content << [memo_contents]
+    content << [memo_contents]
   end
 elsif memo_type == 2
   to_do
   CSV.open("#{filename}.csv", "a") do |content|
-		content << [memo_contents]
+    content << [memo_contents]
+  end
 end

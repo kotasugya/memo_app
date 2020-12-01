@@ -6,11 +6,19 @@ memo_type = gets.to_i
 puts "拡張子を除いたファイルを入力してください"
 filename = gets.chomp!
 
+def to_do
+  puts "メモしたい内容を記入してください"
+  memo_contents = gets.to_s 
+  puts "完了したらctrl + Dをおします。"
+end
+
 if memo_type == 1
-	puts "メモしたい内容を記入してください"
-	memo_contents = gets.to_s 
-	puts "完了したらctrl + Dをおします。"
+	to_do
 	CSV.open("#{filename}.csv", "w") do |content|
 		content << [memo_contents]
-	end
+  end
+elsif memo_type == 2
+  to_do
+  CSV.open("#{filename}.csv", "a") do |content|
+		content << [memo_contents]
 end
